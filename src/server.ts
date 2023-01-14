@@ -7,7 +7,6 @@ import { protect } from "./modules/auth";
 import { createNewUser, signin } from "./handlers/user";
 
 const app = express();
-app.use(express.static(path.resolve(__dirname, "../client/build")));
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -15,19 +14,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-<<<<<<< HEAD
   res.status(200);
-  //res.json({ message: "hello" });
-  res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
-});
-
-app.get("/db", (req, res) => {
-  res.status(200);
-  res.json([{ title: "predator" }, { title: "konan" }, { title: "avatar" }]);
-=======
-    res.status(200);
-    res.json({ message: "hello you" });
->>>>>>> origin/main
+  res.json({ message: "hello" });
 });
 
 app.use("/api", protect, router);
