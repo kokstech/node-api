@@ -15,6 +15,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
+<<<<<<< HEAD
   res.status(200);
   //res.json({ message: "hello" });
   res.sendFile(path.resolve(__dirname, "../client/build", "index.html"));
@@ -23,6 +24,10 @@ app.get("/", (req, res) => {
 app.get("/db", (req, res) => {
   res.status(200);
   res.json([{ title: "predator" }, { title: "konan" }, { title: "avatar" }]);
+=======
+    res.status(200);
+    res.json({ message: "hello you" });
+>>>>>>> origin/main
 });
 
 app.use("/api", protect, router);
